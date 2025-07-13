@@ -29,7 +29,7 @@ function addProduct() {
       description: productDescriptionInput.value.trim(),
       image: productImageInput.files[0]
         ? `image/${productImageInput.files[0]?.name}`
-        : `image/electronic1.JPEG`,
+        : `image/electronic3.JPEG`,
     };
 
     productList.push(product);
@@ -66,7 +66,7 @@ function createCols(i) {
        <div class="col-md-3">
             <div class="card">
               <div class="card">
-                <img height="150px" class="card-img-top" src="image/electronic1.JPEG" alt="Title" />
+                <img height="150px" class="card-img-top" src="image/electronic3.JPEG" alt="Title" />
                 <div class="card-body text-center">
                   <span>id: ${i}</span>
                   <h3 class="card-title"> ${productList[i].name.replace(
