@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crud</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container bg-info p-4 rounded-4 my-3">
+        <h1 class="text-center text-white">product management system</h1>
+        <div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="productName"
+              placeholder="name@example.com"
+              oninput="validationInputs(this,'msgName')"
+            />
+            <label for="productname">product name</label>
+            <p id="msgName" class="alert alert-danger d-none">
+              it must start with a letter,be3 to 20 characters long,and you can
+              only contain letters,numbers.
+            </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="number"
+              class="form-control"
+              id="productPrice"
+              placeholder="name@example.com"
+              oninput=" validationInputs(this,'msgPrice')"
+            />
+            <label for="productPrice">productPrice</label>
+            <p id="msgPrice" class="d-none alert alert-danger">
+              price must start with a number from 1 to 9 (no leading zeros)
+            </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              list="list"
+              class="form-control"
+              id="productCategory"
+              placeholder="name@example.com"
+              oninput=" validationInputs(this,'msgCategory')"
+            />
+            <label for="productcategory">product category</label>
+            <p id="msgCategory" class="d-none alert alert-danger">
+              Please choose a valid category: tv, mobile, screen, or electronic only.
+            </p>
+            <datalist id="list">
+              <option value="tv" />
+              <option value="mobile" />
+              <option value="screen" />
+              <option value="electronic" />
+            </datalist>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea
+              type="text"
+              style="height: 100px"
+              class="form-control"
+              id="productDescription"
+              placeholder="name@example.com"
+              oninput=" validationInputs(this,'msgDescription')"
+            ></textarea>
+            <label for="productdescription">product Description</label>
+            <p id="msgDescription" class="d-none alert alert-danger">
+              Description must start with a letter and be at least 10 characters long. It can include letters, numbers, spaces, dots, or commas.
+            </p>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input
+              type="file"
+              class="form-control"
+              id="productImage"
+              placeholder="name@example.com"
+              oninput=" validationInputs(this,'msgImg')"
+            />
+            <label for="productimage">product image</label>
+            <p id="msgImg" class="d-none alert alert-danger">invalid pattern</p>
+          </div>
+
+          <button id="btnAdd" class="btn btn-primary" onclick="addProduct()">
+            add product
+          </button>
+          <button
+            id="btnUpdate"
+            onclick="updateData()"
+            class="btn btn-warning d-none"
+          >
+            update product
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-fluid">
+        <input
+          oninput="searchData()"
+          id="searchInput"
+          type="search"
+          class="form-control w-50 mx-auto my-4"
+          placeholder="search by name...."
+        />
+        <div id="rowData" class="row gy-4"></div>
+      </div>
+    </section>
+    <script src="js/index.js"></script>
+  </body>
+</html>
